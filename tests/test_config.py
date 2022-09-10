@@ -1,14 +1,6 @@
 import pytest
 
-from pushed_py.PushedPy import Config
-
-CLIENT_ID = "CLIENT_ID"
-CLIENT_SECRET = "CLIENT_SECRET"
-CLIENT_ALIAS = "CLIENT_ALIAS"
-
-@pytest.fixture
-def config():
-    return Config(CLIENT_ID, CLIENT_SECRET, CLIENT_ALIAS)
+from .conftest import CLIENT_ALIAS, CLIENT_SECRET, CLIENT_ID
 
 def test_get_client_id(config):
     assert config.client_id == CLIENT_ID
