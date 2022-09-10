@@ -1,0 +1,9 @@
+tasks:
+  - name: Install packages and dependency
+    init: |
+      pip install -e .
+      pip install -r requirements.test.txt
+
+vscode:
+  extensions:
+    - ms-python.python
