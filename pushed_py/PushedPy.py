@@ -37,15 +37,16 @@ class Config:
 
 def send(message: str, config: Config, target: str = "app") -> bool:
     payload = {
-        "app_key": Config.client_id,
-        "app_secret": Config.client_secret,
+        "app_key": config.client_id,
+        "app_secret": config.client_secret,
         "target_type": target,
+        "target_alias": config.client_alias,
         "content": message
     }
 
-    r = requests.post(f"{PUSHED_SERVICE_URL}/push", data=payload)
+    r = post(f"{PUSHED_SERVICE_URL}/push", data=payload)
     
     if not r.ok:
-        NotificationSendFailed()
-    else:
-        return True
+        raise NotificationSendFailed()
+        
+    return True
