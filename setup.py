@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name = "pushed_py",
-    version="v0.0.1",
+    version="v0.0.1.0",
     url="https://github.com/claudiosTime/get-pushed-python",
     author="claudiosTime",
     author_email="c.tappia@gmail.com",
